@@ -51,9 +51,7 @@ namespace CSharpHomework
 
         public static Point operator +(Point x, Point y)
         {
-            Point z = new Point(0, 0);
-            z.x = x.x + y.x;
-            z.y = x.y + y.y;
+            Point z = new Point(x.x + y.x, x.y + y.y);
             return z;
         }
     }
