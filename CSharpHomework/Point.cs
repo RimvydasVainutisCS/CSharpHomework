@@ -48,5 +48,13 @@ namespace CSharpHomework
             return (this.x == ((Point)obj).CoordinateX)
                 && (this.y == ((Point)obj).CoordinateY);
         }
+
+        public static Point operator +(Point x, Point y)
+        {
+            Point z = new Point(0, 0);
+            z.x = x.x + y.x;
+            z.y = x.y + y.y;
+            return z;
+        }
     }
 }

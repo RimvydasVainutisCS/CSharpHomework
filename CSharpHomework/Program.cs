@@ -26,9 +26,14 @@ namespace CSharpHomework
             Console.WriteLine("------");
             Console.WriteLine();
 
-            Console.WriteLine($"Are the coordinates {pointOne} equal to coordinates {pointTwo}? Answer: {pointOne.Equals(pointTwo)}.");
-            Console.WriteLine($"Are the coordinates {pointOne} equal to coordinates {pointThree}? Answer: {pointOne.Equals(pointThree)}.");
-            Console.WriteLine($"Are the coordinates {pointOne} equal to coordinates {pointFour}? Answer: {pointOne.Equals(pointFour)}.");
+            Console.WriteLine($"Are the {pointOne} equal to {pointTwo}? Answer: {pointOne.Equals(pointTwo)}.");
+            Console.WriteLine($"Are the {pointOne} equal to {pointThree}? Answer: {pointOne.Equals(pointThree)}.");
+            Console.WriteLine($"Are the {pointOne} equal to {pointFour}? Answer: {pointOne.Equals(pointFour)}.");
+
+            Console.WriteLine();
+            Console.WriteLine($"Sum of {pointOne} and {pointTwo} are coordinates: {pointOne + pointTwo}.");
+            Console.WriteLine($"Sum of {pointOne} and {pointThree} are coordinates: {pointOne + pointThree}.");
+            Console.WriteLine($"Sum of {pointOne} and {pointFour} are coordinates: {pointOne + pointFour}.");
 
             Console.ReadLine();
         }
