@@ -45,14 +45,17 @@ namespace CSharpHomework
                 return false;
             }
 
-            return (this.x == ((Point)obj).CoordinateX)
-                && (this.y == ((Point)obj).CoordinateY);
+            // USE (obj as Point)? because it doesn't cause Exception!
+            return (this.x == (obj as Point)?.CoordinateX)
+                && (this.y == (obj as Point)?.CoordinateY);
+
+            //return (this.x == ((Point)obj).CoordinateX)
+            //    && (this.y == ((Point)obj).CoordinateY);
         }
 
         public static Point operator +(Point x, Point y)
         {
-            Point z = new Point(x.x + y.x, x.y + y.y);
-            return z;
+            return new Point(x.x + y.x, x.y + y.y);
         }
     }
 }
