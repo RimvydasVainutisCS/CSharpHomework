@@ -6,6 +6,18 @@ using System.Threading.Tasks;
 
 namespace CSharpHomework
 {
+    public class Triangle
+    {
+        Point XY1 { get; set; }
+        Point XY2 { get; set; }
+        Point XY3 { get; set; }
+
+        public double GetPerimeter()
+        {
+            return XY1.GetDistance(XY2) + XY2.GetDistance(XY3) + XY3.GetDistance(XY1);
+        }
+    }
+
     internal class Point
     {
         private int x;
@@ -56,6 +68,14 @@ namespace CSharpHomework
         public static Point operator +(Point x, Point y)
         {
             return new Point(x.x + y.x, x.y + y.y);
+        }
+
+        public double GetDistance(Point point)
+        {
+            double result = (this.CoordinateX - point.CoordinateX) * (this.CoordinateX - point.CoordinateX)
+                + (this.CoordinateY - point.CoordinateY) * (this.CoordinateY - point.CoordinateY);
+
+            return Math.Round(Math.Sqrt(result), 2);
         }
     }
 }
