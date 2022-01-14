@@ -35,6 +35,8 @@ namespace CSharpHomework
             Console.WriteLine($"Sum of {pointOne} and {pointThree} are coordinates: {pointOne + pointThree}.");
             Console.WriteLine($"Sum of {pointOne} and {pointFour} are coordinates: {pointOne + pointFour}.");
 
+
+
             Console.ReadLine();
         }
     }
