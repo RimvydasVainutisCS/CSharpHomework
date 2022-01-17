@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSharpHomework
 {
@@ -11,6 +7,13 @@ namespace CSharpHomework
         Point XY1 { get; set; }
         Point XY2 { get; set; }
         Point XY3 { get; set; }
+
+        public Triangle(Point pointOne, Point pointTwo, Point pointThree)
+        {
+            XY1 = pointOne;
+            XY2 = pointTwo;
+            XY3 = pointThree;
+        }
 
         public double GetPerimeter()
         {
