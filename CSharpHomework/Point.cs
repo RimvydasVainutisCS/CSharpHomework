@@ -19,7 +19,38 @@ namespace CSharpHomework
         {
             return XY1.GetDistance(XY2) + XY2.GetDistance(XY3) + XY3.GetDistance(XY1);
         }
+
+        public double GetHalfPerimeter()
+        {
+            return (XY1.GetDistance(XY2) + XY2.GetDistance(XY3) + XY3.GetDistance(XY1)) / 2;
+        }
+
+        // Triangle area Heron's formula: sqrt(p(p - a) * (p - b) * (p - c)
+        // p = P / 2 = (a + b + c) / 2
+
+        public virtual double GetArea()
+        {
+            return Math.Round(Math.Sqrt(GetHalfPerimeter() *
+                (GetHalfPerimeter() - XY1.GetDistance(XY2)) *
+                (GetHalfPerimeter() - XY2.GetDistance(XY3)) *
+                (GetHalfPerimeter() - XY3.GetDistance(XY1))), 2);
+        }
+
+        public class EquilaterialTriangle : Triangle
+        {
+            public EquilaterialTriangle(Point XY1, Point XY2, Point XY3) : base(XY1, XY2, XY3)
+            {
+            }
+
+            public override double GetArea()
+            {
+                return (XY1.GetDistance(XY2) * XY1.GetDistance(XY2) * Math.Sqrt(3)) / 4;
+            }
+
+        }
     }
+
+    
 
     public class Point
     {

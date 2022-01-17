@@ -40,6 +40,8 @@ namespace CSharpHomework
                 $"\nXY3: {pointThree} " +
                 $"\nis {triangleOne.GetPerimeter()}");
 
+            Console.WriteLine($"Area of triangle: {triangleOne.GetArea()}");
+
             Console.ReadLine();
         }
     }
