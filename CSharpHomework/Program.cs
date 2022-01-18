@@ -1,5 +1,4 @@
 ﻿using System;
-using static CSharpHomework.Triangle;
 
 namespace CSharpHomework
 {
@@ -13,15 +12,10 @@ namespace CSharpHomework
             var pointOne = new Point(0, 0);
             var pointTwo = new Point(3, 1);
             var pointThree = new Point(1, 3);
-            //var pointOne = new Point(0, 11);
-            //var pointTwo = new Point(12, 2);
-            //var pointThree = new Point(0, 0);
             var pointFour = new Point(3, 4);
 
             var triangleOne = new Triangle(pointOne, pointTwo, pointThree);
-
             var triangleTwo = new EquilaterialTriangle(pointOne, pointTwo, pointThree);
-
             var triangleThree = new RectangularTriangle(pointOne, pointTwo, pointThree);
 
             Console.WriteLine(pointOne.ToString());
