@@ -1,4 +1,5 @@
 ﻿using System;
+using static CSharpHomework.Triangle;
 
 namespace CSharpHomework
 {
@@ -9,12 +10,19 @@ namespace CSharpHomework
             Console.WriteLine("Homework 001");
             Console.WriteLine("\n------");
 
-            var pointOne = new Point(0, 11);
-            var pointTwo = new Point(12, 2);
-            var pointThree = new Point(0, 0);
+            var pointOne = new Point(0, 0);
+            var pointTwo = new Point(3, 1);
+            var pointThree = new Point(1, 3);
+            //var pointOne = new Point(0, 11);
+            //var pointTwo = new Point(12, 2);
+            //var pointThree = new Point(0, 0);
             var pointFour = new Point(3, 4);
 
             var triangleOne = new Triangle(pointOne, pointTwo, pointThree);
+
+            var triangleTwo = new EquilaterialTriangle(pointOne, pointTwo, pointThree);
+
+            var triangleThree = new RectangularTriangle(pointOne, pointTwo, pointThree);
 
             Console.WriteLine(pointOne.ToString());
             Console.WriteLine(pointTwo.ToString());
@@ -41,6 +49,10 @@ namespace CSharpHomework
                 $"\nis {triangleOne.GetPerimeter()}");
 
             Console.WriteLine($"Area of triangle: {triangleOne.GetArea()}");
+
+            Console.WriteLine($"Area of Equilaterial triangle: {triangleTwo.GetArea()}");
+
+            Console.WriteLine($"Area of Rectangular triangle: {triangleThree.GetArea()}");
 
             Console.ReadLine();
         }
