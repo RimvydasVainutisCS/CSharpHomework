@@ -2,12 +2,8 @@
 
 namespace CSharpHomework
 {
-    public class Triangle
+    public class Triangle : Figure
     {
-        public Point XY1 { get; set; }
-        public Point XY2 { get; set; }
-        public Point XY3 { get; set; }
-
         public Triangle(Point pointOne, Point pointTwo, Point pointThree)
         {
             XY1 = pointOne;
@@ -28,12 +24,12 @@ namespace CSharpHomework
         // Triangle area Heron's formula: sqrt(p(p - a) * (p - b) * (p - c)
         // p = P / 2 = (a + b + c) / 2
 
-        public virtual double GetArea()
+        public override double GetArea()
         {
             return Math.Round(Math.Sqrt(GetHalfPerimeter() *
-                (GetHalfPerimeter() - XY1.GetDistance(XY2)) *
-                (GetHalfPerimeter() - XY2.GetDistance(XY3)) *
-                (GetHalfPerimeter() - XY3.GetDistance(XY1))), 2);
+                                (GetHalfPerimeter() - XY1.GetDistance(XY2)) *
+                                (GetHalfPerimeter() - XY2.GetDistance(XY3)) *
+                                (GetHalfPerimeter() - XY3.GetDistance(XY1))), 2);
         }
     }
 }
