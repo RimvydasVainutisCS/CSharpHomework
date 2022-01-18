@@ -18,6 +18,8 @@ namespace CSharpHomework
             var triangleTwo = new EquilaterialTriangle(pointOne, pointTwo, pointThree);
             var triangleThree = new RectangularTriangle(pointOne, pointTwo, pointThree);
 
+            var circleOne = new Circle(pointOne, pointTwo);
+
             Console.WriteLine(pointOne.ToString());
             Console.WriteLine(pointTwo.ToString());
             Console.WriteLine(pointThree.ToString());
@@ -47,6 +49,9 @@ namespace CSharpHomework
             Console.WriteLine($"Area of Equilaterial triangle: {triangleTwo.GetArea()}");
 
             Console.WriteLine($"Area of Rectangular triangle: {triangleThree.GetArea()}");
+
+            Console.WriteLine($"Perimeter of circleOne is: {circleOne.GetPerimeter()}");
+            Console.WriteLine($"Area of circleOne is: {circleOne.GetArea()}");
 
             Console.ReadLine();
         }
