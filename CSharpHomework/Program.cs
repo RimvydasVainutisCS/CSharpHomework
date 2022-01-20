@@ -10,8 +10,8 @@ namespace CSharpHomework
             Console.WriteLine("\n------");
 
             var pointOne = new Point(0, 0);
-            var pointTwo = new Point(3, 1);
-            var pointThree = new Point(1, 3);
+            var pointTwo = new Point(0, 10);
+            var pointThree = new Point(10, 10);
             var pointFour = new Point(3, 4);
 
             var triangleOne = new Triangle(pointOne, pointTwo, pointThree);
@@ -19,6 +19,8 @@ namespace CSharpHomework
             var triangleThree = new RectangularTriangle(pointOne, pointTwo, pointThree);
 
             var circleOne = new Circle(pointOne, pointTwo);
+
+            var rectangleOne = new Rectangle(pointOne, pointTwo, pointThree);
 
             Console.WriteLine(pointOne.ToString());
             Console.WriteLine(pointTwo.ToString());
@@ -43,15 +45,20 @@ namespace CSharpHomework
                 $"\nXY2: {pointTwo}, " +
                 $"\nXY3: {pointThree} " +
                 $"\nis {triangleOne.GetPerimeter()}");
+            Console.WriteLine();
 
             Console.WriteLine($"Area of triangle: {triangleOne.GetArea()}");
 
             Console.WriteLine($"Area of Equilaterial triangle: {triangleTwo.GetArea()}");
 
             Console.WriteLine($"Area of Rectangular triangle: {triangleThree.GetArea()}");
+            Console.WriteLine();
 
             Console.WriteLine($"Perimeter of circleOne is: {circleOne.GetPerimeter()}");
             Console.WriteLine($"Area of circleOne is: {circleOne.GetArea()}");
+            Console.WriteLine();
+
+            Console.WriteLine($"Area of rectangleOne is: {rectangleOne.GetArea()}");
 
             Console.ReadLine();
         }
