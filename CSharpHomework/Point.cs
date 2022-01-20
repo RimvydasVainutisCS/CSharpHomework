@@ -61,5 +61,9 @@ namespace CSharpHomework
 
             return Math.Round(Math.Sqrt(result), 2);
         }
+
+        // sample used from documentation to avoid a warning about overriding Equals()
+        // and not overriding GetHashCode()
+        public override int GetHashCode() { return 0; }
     }
 }

@@ -60,6 +60,9 @@ namespace CSharpHomework
 
             Console.WriteLine($"Area of rectangleOne is: {rectangleOne.GetArea()}");
 
+
+
+
             Console.ReadLine();
         }
     }
