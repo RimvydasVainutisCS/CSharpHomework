@@ -61,11 +61,6 @@ namespace CSharpHomework
 
             Console.WriteLine($"Area of rectangleOne is: {rectangleOne.GetArea()}");
 
-            List<double> allFigures = new List<double>
-            {
-                1
-            };
-
             var listOfFigures = new List<Figure>();
 
             listOfFigures.Add(new Triangle(pointOne, pointTwo, pointThree));
