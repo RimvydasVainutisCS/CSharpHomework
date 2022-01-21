@@ -78,11 +78,12 @@ namespace CSharpHomework
             double totalAreaTriangles = 0;
             foreach (var figure in listOfFigures)
             {
+                double area = figure.GetArea();
                 if (figure.GetType() == typeof(Triangle))
                 {
-                    totalAreaTriangles += figure.GetArea();
+                    totalAreaTriangles += area;
                 }
-                totalArea += figure.GetArea();
+                totalArea += area;
             }
 
             Console.WriteLine($"\nTotal area of figures: {totalArea}");
