@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CSharpHomework
 {
@@ -60,8 +61,37 @@ namespace CSharpHomework
 
             Console.WriteLine($"Area of rectangleOne is: {rectangleOne.GetArea()}");
 
+            List<double> allFigures = new List<double>
+            {
+                1
+            };
 
+            var listOfFigures = new List<Figure>();
 
+            listOfFigures.Add(new Triangle(pointOne, pointTwo, pointThree));
+            listOfFigures.Add(new Triangle(pointOne, pointTwo, pointThree));
+            listOfFigures.Add(new Triangle(pointOne, pointTwo, pointThree));
+
+            listOfFigures.Add(new Circle(pointOne, pointTwo));
+            listOfFigures.Add(new Circle(pointOne, pointTwo));
+            listOfFigures.Add(new Circle(pointOne, pointTwo));
+
+            listOfFigures.Add(new Rectangle(pointOne, pointTwo, pointThree));
+            listOfFigures.Add(new Rectangle(pointOne, pointTwo, pointThree));
+
+            double totalArea = 0;
+            double totalAreaTriangles = 0;
+            foreach (var figure in listOfFigures)
+            {
+                if (figure.GetType() == typeof(Triangle))
+                {
+                    totalAreaTriangles += figure.GetArea();
+                }
+                totalArea += figure.GetArea();
+            }
+
+            Console.WriteLine($"\nTotal area of figures: {totalArea}");
+            Console.WriteLine($"Total area of figures: {totalAreaTriangles}");
 
             Console.ReadLine();
         }
