@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSharpHomework
 {
-    internal class Point
+    public class Point
     {
         private int x;
         private int y;
@@ -45,8 +41,29 @@ namespace CSharpHomework
                 return false;
             }
 
-            return (this.x == ((Point)obj).CoordinateX)
-                && (this.y == ((Point)obj).CoordinateY);
+            // USE (obj as Point)? because it doesn't cause Exception!
+            return (this.x == (obj as Point)?.CoordinateX)
+                && (this.y == (obj as Point)?.CoordinateY);
+
+            //return (this.x == ((Point)obj).CoordinateX)
+            //    && (this.y == ((Point)obj).CoordinateY);
         }
+
+        public static Point operator +(Point x, Point y)
+        {
+            return new Point(x.x + y.x, x.y + y.y);
+        }
+
+        public double GetDistance(Point point)
+        {
+            double result = (this.CoordinateX - point.CoordinateX) * (this.CoordinateX - point.CoordinateX)
+                + (this.CoordinateY - point.CoordinateY) * (this.CoordinateY - point.CoordinateY);
+
+            return Math.Round(Math.Sqrt(result), 2);
+        }
+
+        // sample used from documentation to avoid a warning about overriding Equals()
+        // and not overriding GetHashCode()
+        public override int GetHashCode() { return 0; }
     }
 }
